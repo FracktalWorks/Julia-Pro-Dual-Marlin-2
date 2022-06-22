@@ -10,7 +10,7 @@ Hardware requirements
 6. Rpi Shield- Rpi Shield V1.2.brd
 7. MKS genL V2.1
 8. UART jumer config
-9.Extruder_0 Board- Extruder_0 Board.brd
-10.Extruder_1 Board- Extruder_1 Board.brd
+9. Extruder_0 Board- Extruder_0 Board.brd
+10. Extruder_1 Board- Extruder_1 Board.brd
 
 Repo link: https://github.com/FracktalWorks/Julia-Pro-Electronics
