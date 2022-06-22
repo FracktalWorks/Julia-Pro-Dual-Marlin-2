@@ -13,4 +13,4 @@ Hardware requirements
 9.Extruder_0 Board- Extruder_0 Board.brd
 10.Extruder_1 Board- Extruder_1 Board.brd
 
-Repo link: https://github.com/FracktalWorks/Julia-Electronics
+Repo link: https://github.com/FracktalWorks/Julia-Pro-Electronics
