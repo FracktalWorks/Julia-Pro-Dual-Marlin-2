@@ -34,24 +34,24 @@
 #include "../../../inc/MarlinConfigPre.h"
 #include <stddef.h>
 
-#if DISABLED(INDIVIDUAL_AXIS_HOMING_SUBMENU)
-  #error "INDIVIDUAL_AXIS_HOMING_SUBMENU is required with ProUI."
-#endif
-#if DISABLED(LCD_SET_PROGRESS_MANUALLY)
-  #error "LCD_SET_PROGRESS_MANUALLY is required with ProUI."
-#endif
-#if DISABLED(STATUS_MESSAGE_SCROLLING)
-  #error "STATUS_MESSAGE_SCROLLING is required with ProUI."
-#endif
-#if DISABLED(BAUD_RATE_GCODE)
-  #error "BAUD_RATE_GCODE is required with ProUI."
-#endif
-#if DISABLED(SOUND_MENU_ITEM)
-  #error "SOUND_MENU_ITEM is required with ProUI."
-#endif
-#if DISABLED(PRINTCOUNTER)
-  #error "PRINTCOUNTER is required with ProUI."
-#endif
+// #if DISABLED(INDIVIDUAL_AXIS_HOMING_SUBMENU)
+//   #error "INDIVIDUAL_AXIS_HOMING_SUBMENU is required with ProUI."
+// #endif
+// #if DISABLED(LCD_SET_PROGRESS_MANUALLY)
+//   #error "LCD_SET_PROGRESS_MANUALLY is required with ProUI."
+// #endif
+// #if DISABLED(STATUS_MESSAGE_SCROLLING)
+//   #error "STATUS_MESSAGE_SCROLLING is required with ProUI."
+// #endif
+// #if DISABLED(BAUD_RATE_GCODE)
+//   #error "BAUD_RATE_GCODE is required with ProUI."
+// #endif
+// #if DISABLED(SOUND_MENU_ITEM)
+//   #error "SOUND_MENU_ITEM is required with ProUI."
+// #endif
+// #if DISABLED(PRINTCOUNTER)
+//   #error "PRINTCOUNTER is required with ProUI."
+// #endif
 
 #include "../common/dwin_color.h"
 #if ENABLED(LED_CONTROL_MENU)

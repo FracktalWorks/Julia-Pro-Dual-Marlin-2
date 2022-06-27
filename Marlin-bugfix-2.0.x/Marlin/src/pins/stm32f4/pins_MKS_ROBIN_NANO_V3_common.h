@@ -78,7 +78,8 @@
 
 #define Z_ENABLE_PIN                        PB8
 #define Z_STEP_PIN                          PB5
-#define Z_DIR_PIN                           PB4 
+#define Z_DIR_PIN                           PB4
+#define Z_DIR_PIN_1                         PD14    //mirrir pin for Z_DIR for ABL       
 
 #define E0_ENABLE_PIN                       PB3
 #define E0_STEP_PIN                         PD6

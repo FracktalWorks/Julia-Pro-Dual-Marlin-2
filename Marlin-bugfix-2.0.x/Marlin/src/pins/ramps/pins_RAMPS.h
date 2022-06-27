@@ -65,7 +65,7 @@
   #ifdef IS_RAMPS_13
     #define SERVO0_PIN                         7
   #else
-    #define SERVO0_PIN                        21/////As of daughter board
+    #define SERVO0_PIN                        11//21//11
   #endif
 #endif
 #ifndef SERVO1_PIN
@@ -110,7 +110,7 @@
 // Z Probe (when not Z_MIN_PIN)
 //
 #ifndef Z_MIN_PROBE_PIN
-  #define Z_MIN_PROBE_PIN                     5//32
+  #define Z_MIN_PROBE_PIN                     57//32
 #endif
 
 //
@@ -169,18 +169,56 @@
   #define E1_CS_PIN                           44
 #endif
 
+
+
+// ///////////////////////////////////Fracktal Works Change/////////////////
+// #ifndef E2_STEP_PIN
+//   #define E2_STEP_PIN                         36
+// #endif
+// #ifndef E2_DIR_PIN
+//   #define E2_DIR_PIN                          34
+// #endif
+// #ifndef E2_ENABLE_PIN
+//   #define E2_ENABLE_PIN                       30
+// #endif
+// #ifndef E2_CS_PIN
+//   #define E2_CS_PIN                           44
+// #endif
+
+// #ifndef E3_STEP_PIN
+//   #define E3_STEP_PIN                         36
+// #endif
+// #ifndef E3_DIR_PIN
+//   #define E3_DIR_PIN                          34
+// #endif
+// #ifndef E3_ENABLE_PIN
+//   #define E3_ENABLE_PIN                       30
+// #endif
+// #ifndef E3_CS_PIN
+//   #define E3_CS_PIN                           44
+// #endif
+// //////////////////////Fracktal Works Change end/////////////////
 //
 // Temperature Sensors
 //
-#ifndef TEMP_0_PIN
-  #define TEMP_0_PIN                          15//13  // Analog Input
-#endif
-#ifndef TEMP_1_PIN
-  #define TEMP_1_PIN                          13//15  // Analog Input
-#endif
-#ifndef TEMP_BED_PIN
-  #define TEMP_BED_PIN                        14  // Analog Input
-#endif
+// #ifndef TEMP_0_PIN
+//   #define TEMP_0_PIN                          13//15  // Analog Input
+// #endif
+// #ifndef TEMP_1_PIN
+//   #define TEMP_1_PIN                          15//13  // Analog Input
+// #endif
+// #ifndef TEMP_BED_PIN
+//   #define TEMP_BED_PIN                        14  // Analog Input
+// #endif
+
+////////////Fracktal Works Change/////////////////
+#define TEMP_0_PIN         13//4   // Analog Input
+#define TEMP_1_PIN         14//3   // Analog Input
+// #define TEMP_2_PIN         13   // Analog Input
+// #define TEMP_3_PIN         15   // Analog Input
+#define TEMP_BED_PIN       14   // Analog Input
+
+////////////Fracktal Works Change end/////////////////
 
 //
 // SPI for MAX Thermocouple
@@ -196,7 +234,7 @@
   #define MOSFET_A_PIN                        10
 #endif
 #ifndef MOSFET_B_PIN
-  #define MOSFET_B_PIN                         9
+  #define MOSFET_B_PIN                         7//9
 #endif
 #ifndef MOSFET_C_PIN
   #define MOSFET_C_PIN                         8
@@ -207,19 +245,26 @@
 
 #define HEATER_0_PIN                MOSFET_A_PIN
 
+// //////Fracktal Works chamber heater and filament heater pin///////
+// //////START//////////////////////////////////////////
+ #define HEATER_1_PIN   MOSFET_D_PIN
+//     #define HEATER_2_PIN   47
+//     #define HEATER_3_PIN   45                
+// //////END//////////////////////////////////////////
+
 #if FET_ORDER_EFB                                 // Hotend, Fan, Bed
   #define HEATER_BED_PIN            MOSFET_C_PIN
 #elif FET_ORDER_EEF                               // Hotend, Hotend, Fan
-  #define HEATER_1_PIN              MOSFET_B_PIN
+ // #define HEATER_1_PIN              MOSFET_B_PIN
 #elif FET_ORDER_EEB                               // Hotend, Hotend, Bed
-  #define HEATER_1_PIN              MOSFET_B_PIN
+//  #define HEATER_1_PIN              MOSFET_B_PIN
   #define HEATER_BED_PIN            MOSFET_C_PIN
 #elif FET_ORDER_EFF                               // Hotend, Fan, Fan
   #define FAN1_PIN                  MOSFET_C_PIN
 #elif DISABLED(FET_ORDER_SF)                      // Not Spindle, Fan (i.e., "EFBF" or "EFBE")
   #define HEATER_BED_PIN            MOSFET_C_PIN
   #if EITHER(HAS_MULTI_HOTEND, HEATERS_PARALLEL)
-    #define HEATER_1_PIN            MOSFET_D_PIN
+  //  #define HEATER_1_PIN            MOSFET_D_PIN
   #else
     #define FAN1_PIN                MOSFET_D_PIN
   #endif
@@ -366,10 +411,11 @@
     #define E0_SERIAL_RX_PIN                  66
   #endif
   #ifndef E1_SERIAL_TX_PIN
-    #define E1_SERIAL_TX_PIN                  -1
+    #define E1_SERIAL_TX_PIN                  20
   #endif
   #ifndef E1_SERIAL_RX_PIN
-    #define E1_SERIAL_RX_PIN                  -1
+    #define E1_SERIAL_RX_PIN                  67
+
   #endif
   #ifndef E2_SERIAL_TX_PIN
     #define E2_SERIAL_TX_PIN                  -1
