@@ -256,7 +256,7 @@ G29_TYPE GcodeSuite::G29() {
 
   /* FRACKTAL WORKS: START */
   do_blocking_move_to_xy(5, 5, MMM_TO_MMS(50*60));
-  do_blocking_move_to_z(3, MMM_TO_MMS(50*60));
+  do_blocking_move_to_z(3, MMM_TO_MMS(5*60));
   /* FRACKTAL WORKS: END */
 
   // 3-point leveling gets points from the probe class
