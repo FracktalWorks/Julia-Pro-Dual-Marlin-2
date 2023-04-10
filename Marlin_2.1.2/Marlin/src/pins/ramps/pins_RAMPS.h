@@ -65,7 +65,7 @@
   #ifdef IS_RAMPS_13
     #define SERVO0_PIN                         7
   #else
-    #define SERVO0_PIN                        11
+    #define SERVO0_PIN                        21 //11 // FW
   #endif
 #endif
 #ifndef SERVO1_PIN
@@ -135,7 +135,7 @@
 // Z Probe (when not Z_MIN_PIN)
 //
 #ifndef Z_MIN_PROBE_PIN
-  #define Z_MIN_PROBE_PIN                     32
+  #define Z_MIN_PROBE_PIN                     5 //32 // FW
 #endif
 
 //
@@ -198,10 +198,10 @@
 // Temperature Sensors
 //
 #ifndef TEMP_0_PIN
-  #define TEMP_0_PIN                          13  // Analog Input
+  #define TEMP_0_PIN                          15 //13  // Analog Input // FW
 #endif
 #ifndef TEMP_1_PIN
-  #define TEMP_1_PIN                          15  // Analog Input
+  #define TEMP_1_PIN                          13 //15  // Analog Input // FW
 #endif
 #ifndef TEMP_BED_PIN
   #define TEMP_BED_PIN                        14  // Analog Input
@@ -227,7 +227,7 @@
   #define MOSFET_C_PIN                         8
 #endif
 #ifndef MOSFET_D_PIN
-  #define MOSFET_D_PIN                        -1
+  #define MOSFET_D_PIN                        7 //-1 // FW
 #endif
 
 #define HEATER_0_PIN                MOSFET_A_PIN
@@ -262,7 +262,7 @@
   #elif EITHER(FET_ORDER_EEF, FET_ORDER_SF)       // Hotend, Hotend, Fan or Spindle, Fan
     #define FAN_PIN                 MOSFET_C_PIN
   #elif FET_ORDER_EEB                             // Hotend, Hotend, Bed
-    #define FAN_PIN                            4  // IO pin. Buffer needed
+    #define FAN_PIN                 MOSFET_B_PIN         //  4  // IO pin. Buffer needed // FW
   #else                                           // Non-specific are "EFB" (i.e., "EFBF" or "EFBE")
     #define FAN_PIN                 MOSFET_B_PIN
   #endif
