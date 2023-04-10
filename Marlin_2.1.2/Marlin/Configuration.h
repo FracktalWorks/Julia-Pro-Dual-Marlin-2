@@ -135,7 +135,7 @@
 //#define BLUETOOTH
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Julia Pro Dual 24V ABL with TMC2209 on UART mode on MKS GenL V2.1" // FW
+#define CUSTOM_MACHINE_NAME "Julia Pro Dual 24V ABL with TMC2209 on UART mode on MKS GenL V2.1 Marlin 2.1.2" // FW
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
