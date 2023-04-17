@@ -1640,7 +1640,7 @@
 // @section motion
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR false //false // FW
+#define INVERT_X_DIR true //false // FW
 #define INVERT_Y_DIR true //true // FW
 #define INVERT_Z_DIR true //false // FW
 //#define INVERT_I_DIR false
