@@ -314,7 +314,7 @@
   #else
     #error "No auto-assignable Spindle/Laser pins available."
   #endif
-#endif
+#endif 
 
 //
 // TMC software SPI
