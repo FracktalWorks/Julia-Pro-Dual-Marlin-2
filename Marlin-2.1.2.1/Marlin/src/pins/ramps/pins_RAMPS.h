@@ -66,7 +66,7 @@
   #ifdef IS_RAMPS_13
     #define SERVO0_PIN                         7
   #else
-    #define SERVO0_PIN                        11
+    #define SERVO0_PIN                        21 //11
   #endif
 #endif
 #ifndef SERVO1_PIN
@@ -226,14 +226,14 @@
 // Temperature Sensors
 //
 #ifndef TEMP_0_PIN
-  #define TEMP_0_PIN                          4  // Analog Input
+  #define TEMP_0_PIN                          15 //4  // Analog Input
 #endif
 #ifndef TEMP_1_PIN
-  #define TEMP_1_PIN                          3  // Analog Input
+  #define TEMP_1_PIN                          13 //3  // Analog Input
   
 #endif
-#define TEMP_2_PIN         13   // Analog Input
-#define TEMP_3_PIN         15   // Analog Input
+//#define TEMP_2_PIN         13   // Analog Input
+//#define TEMP_3_PIN         15   // Analog Input
 
 #ifndef TEMP_BED_PIN
   #define TEMP_BED_PIN                        14  // Analog Input
@@ -259,15 +259,15 @@
   #define MOSFET_C_PIN                         8
 #endif
 #ifndef MOSFET_D_PIN
-  #define MOSFET_D_PIN                        7//-1
+  #define MOSFET_D_PIN                          7 //-1
 #endif
 
 #define HEATER_0_PIN                MOSFET_A_PIN
 //////Fracktal Works chamber heater and filament heater pin///////
 //////START//////////////////////////////////////////
 #define HEATER_1_PIN   MOSFET_D_PIN
-    #define HEATER_2_PIN   47
-    #define HEATER_3_PIN   45                
+    //#define HEATER_2_PIN   47
+    //#define HEATER_3_PIN   45                
 //////END//////////////////////////////////////////
 
 #if FET_ORDER_EFB                                 // Hotend, Fan, Bed

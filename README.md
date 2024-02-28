@@ -2,6 +2,8 @@
 
 Hardware requirements
 
+Julia Pro with Carriage ABL+ LinearRegression
+
 1. ABL Board- Julia ABL Board.brd
 2. Carriage Board- Carriage Board_24V.brd
 3. Chassis Board- Chassis Board.brd

@@ -135,7 +135,7 @@
 //#define BLUETOOTH
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "TVS Volterra Dual 24V UART jumpers with TMC2209 on MKS GenL v2.1"    //FW
+#define CUSTOM_MACHINE_NAME "Upgraded Julia Pro Dual 24V with TMC2209, Servo42, Carriage-ABL on MKS GenL v2.1"    //FW
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -227,7 +227,7 @@
 
 // This defines the number of extruders
 // :[0, 1, 2, 3, 4, 5, 6, 7, 8]
-#define EXTRUDERS 3   //FW
+#define EXTRUDERS 2   //FW
 
 // Generally expected filament diameter (1.75, 2.85, 3.0, ...). Used for Volumetric, Filament Width Sensor, etc.
 #define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
@@ -243,7 +243,7 @@
 #endif
 
 // A dual extruder that uses a single stepper motor
-#define SWITCHING_EXTRUDER      //FW
+//#define SWITCHING_EXTRUDER      //FW
 #if ENABLED(SWITCHING_EXTRUDER)
   #define SWITCHING_EXTRUDER_SERVO_NR 0
   #define SWITCHING_EXTRUDER_SERVO_ANGLES { 0, 180 } // Angles for E0, E1[, E2, E3]     //FW
@@ -253,11 +253,11 @@
 #endif
 
 // A dual-nozzle that uses a servomotor to raise/lower one (or both) of the nozzles
-//#define SWITCHING_NOZZLE
+#define SWITCHING_NOZZLE
 #if ENABLED(SWITCHING_NOZZLE)
   #define SWITCHING_NOZZLE_SERVO_NR 0
   //#define SWITCHING_NOZZLE_E1_SERVO_NR 1          // If two servos are used, the index of the second
-  #define SWITCHING_NOZZLE_SERVO_ANGLES { 0, 90 }   // Angles for E0, E1 (single servo) or lowered/raised (dual servo)
+  #define SWITCHING_NOZZLE_SERVO_ANGLES { 0, 180 }   // Angles for E0, E1 (single servo) or lowered/raised (dual servo)
   #define SWITCHING_NOZZLE_SERVO_DWELL 2500         // Dwell time to wait for servo to make physical move
 #endif
 
@@ -372,7 +372,7 @@
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
 // For the other hotends it is their distance from the extruder 0 hotend.
 #define HOTEND_OFFSET_X { 0.0, 36.00 } // (mm) relative X-offset for each nozzle    //FW
-#define HOTEND_OFFSET_Y { 0.0, 5.00 }  // (mm) relative Y-offset for each nozzle    //FW
+#define HOTEND_OFFSET_Y { 0.0, 0.00 }  // (mm) relative Y-offset for each nozzle    //FW
 #define HOTEND_OFFSET_Z { 0.0, -4.00 }  // (mm) relative Z-offset for each nozzle   //FW
 
 // @section multi-material
@@ -536,10 +536,10 @@
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  *
  */
-#define TEMP_SENSOR_0 20    //FW
-#define TEMP_SENSOR_1 20    //FW
-#define TEMP_SENSOR_2 3     //FW
-#define TEMP_SENSOR_3 3     //FW
+#define TEMP_SENSOR_0 5    //FW
+#define TEMP_SENSOR_1 5    //FW
+#define TEMP_SENSOR_2 0     //FW
+#define TEMP_SENSOR_3 0     //FW
 #define TEMP_SENSOR_4 0
 #define TEMP_SENSOR_5 0
 #define TEMP_SENSOR_6 0
@@ -663,9 +663,9 @@
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify up to one value per hotend here, according to your setup.
     // If there are fewer values, the last one applies to the remaining hotends.
-    #define DEFAULT_Kp_LIST {200, 200}    //FW
-    #define DEFAULT_Ki_LIST {100, 100}    //FW
-    #define DEFAULT_Kd_LIST {1, 1}        //FW
+    #define DEFAULT_Kp_LIST {200} //, 200}    //FW
+    #define DEFAULT_Ki_LIST {100} //, 100}    //FW
+    #define DEFAULT_Kd_LIST {1} //, 1}        //FW
   #else
     #define DEFAULT_Kp  22.20
     #define DEFAULT_Ki   1.08
@@ -824,7 +824,7 @@
  * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
  */
 #define PREVENT_COLD_EXTRUSION
-#define EXTRUDE_MINTEMP 170
+#define EXTRUDE_MINTEMP 150
 
 /**
  * Prevent a single extrusion longer than EXTRUDE_MAXLENGTH.
@@ -1192,7 +1192,7 @@
 
 #define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2   //FW
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
-  #define MAX_ACCEL_EDIT_VALUES       { 6000, 6000, 200, 20000 } // ...or, set your own edit limits
+  #define MAX_ACCEL_EDIT_VALUES       { 5000, 5000, 200, 15000 } // ...or, set your own edit limits
 #endif
 
 /**
@@ -1203,7 +1203,7 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves    //FW
+#define DEFAULT_ACCELERATION          1500    // X, Y, Z and E acceleration for printing moves    //FW
 #define DEFAULT_RETRACT_ACCELERATION  2000    // E acceleration for retracts    //FW
 #define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves   //FW
 
@@ -1496,7 +1496,7 @@
 #define Z_PROBE_FEEDRATE_FAST (2.5*60)//(2*60)    //FW
 
 // Feedrate (mm/min) for the "accurate" probe of each point
-#define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 10)//(Z_PROBE_FEEDRATE_FAST / 15)      //FW
+#define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 2)//(Z_PROBE_FEEDRATE_FAST / 15)      //FW
 
 /**
  * Probe Activation Switch
@@ -1635,14 +1635,14 @@
 // @section extruder
 
 #define DISABLE_E false             // Disable the extruder when not stepping
-#define DISABLE_INACTIVE_EXTRUDER   // Keep only the active extruder enabled
+#define DISABLE_INACTIVE_EXTRUDER true  // Keep only the active extruder enabled
 
 // @section motion
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR false
-#define INVERT_Y_DIR false    //FW
-#define INVERT_Z_DIR false     //FW
+#define INVERT_X_DIR true     //FW
+#define INVERT_Y_DIR true    //FW
+#define INVERT_Z_DIR true     //FW
 //#define INVERT_I_DIR false
 //#define INVERT_J_DIR false
 //#define INVERT_K_DIR false
@@ -1695,7 +1695,7 @@
 
 // The size of the printable area
 #define X_BED_SIZE 395    //FW
-#define Y_BED_SIZE 400    //FW
+#define Y_BED_SIZE 395    //FW
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1703,7 +1703,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 425     //FW
+#define Z_MAX_POS 400     //FW
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
 //#define J_MIN_POS 0
@@ -2239,7 +2239,7 @@
  *    P1  Raise the nozzle always to Z-park height.
  *    P2  Raise the nozzle by Z-park amount, limited to Z_MAX_POS.
  */
-//#define NOZZLE_PARK_FEATURE
+#define NOZZLE_PARK_FEATURE
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
@@ -3353,7 +3353,7 @@
 #define SERVO_DELAY { 1000 }      //FW
 
 // Only power servos during movement, otherwise leave off to prevent jitter
-//#define DEACTIVATE_SERVOS_AFTER_MOVE
+#define DEACTIVATE_SERVOS_AFTER_MOVE
 
 // Edit servo angles with M281 and save to EEPROM with M500
 //#define EDITABLE_SERVO_ANGLES
