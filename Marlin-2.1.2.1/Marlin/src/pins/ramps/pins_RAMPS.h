@@ -195,31 +195,31 @@
   #define E1_CS_PIN                           44
 #endif
 ///////////////////////////////////Fracktal Works Change/////////////////   //FW
-#ifndef E2_STEP_PIN
-  #define E2_STEP_PIN                         36
-#endif
-#ifndef E2_DIR_PIN
-  #define E2_DIR_PIN                          34
-#endif
-#ifndef E2_ENABLE_PIN
-  #define E2_ENABLE_PIN                       30
-#endif
-#ifndef E2_CS_PIN
-  #define E2_CS_PIN                           44
-#endif
+//#ifndef E2_STEP_PIN
+ // #define E2_STEP_PIN                         36
+//#endif
+//#ifndef E2_DIR_PIN
+  //#define E2_DIR_PIN                          34
+//#endif
+//#ifndef E2_ENABLE_PIN
+  //#define E2_ENABLE_PIN                       30
+//#endif
+//#ifndef E2_CS_PIN
+  //#define E2_CS_PIN                           44
+//#endif
 
-#ifndef E3_STEP_PIN
-  #define E3_STEP_PIN                         36
-#endif
-#ifndef E3_DIR_PIN
-  #define E3_DIR_PIN                          34
-#endif
-#ifndef E3_ENABLE_PIN
-  #define E3_ENABLE_PIN                       30
-#endif
-#ifndef E3_CS_PIN
-  #define E3_CS_PIN                           44
-#endif
+//#ifndef E3_STEP_PIN
+ // #define E3_STEP_PIN                         36
+//#endif
+//#ifndef E3_DIR_PIN
+  //#define E3_DIR_PIN                          34
+//#endif
+//#ifndef E3_ENABLE_PIN
+  //#define E3_ENABLE_PIN                       30
+//#endif
+//#ifndef E3_CS_PIN
+ // #define E3_CS_PIN                           44
+//#endif
 //////////////////////Fracktal Works Change end/////////////////
 //
 //
