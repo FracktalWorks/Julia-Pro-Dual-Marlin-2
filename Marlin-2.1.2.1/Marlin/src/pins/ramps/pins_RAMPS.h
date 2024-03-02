@@ -270,23 +270,19 @@
     //#define HEATER_3_PIN   45                
 //////END//////////////////////////////////////////
 
+#define HEATER_0_PIN                MOSFET_A_PIN
+
 #if FET_ORDER_EFB                                 // Hotend, Fan, Bed
-  #ifndef HEATER_BED_PIN
-    #define HEATER_BED_PIN          MOSFET_C_PIN
-  #endif
+  #define HEATER_BED_PIN            MOSFET_C_PIN
 #elif FET_ORDER_EEF                               // Hotend, Hotend, Fan
-  //#define HEATER_1_PIN              MOSFET_B_PIN    //FW
+  #define HEATER_1_PIN              MOSFET_B_PIN
 #elif FET_ORDER_EEB                               // Hotend, Hotend, Bed
-  //#define HEATER_1_PIN              MOSFET_B_PIN    //FW
-  #ifndef HEATER_BED_PIN
-    #define HEATER_BED_PIN          MOSFET_C_PIN
-  #endif
+  #define HEATER_1_PIN              MOSFET_D_PIN
+  #define HEATER_BED_PIN            MOSFET_C_PIN
 #elif FET_ORDER_EFF                               // Hotend, Fan, Fan
   #define FAN1_PIN                  MOSFET_C_PIN
 #elif DISABLED(FET_ORDER_SF)                      // Not Spindle, Fan (i.e., "EFBF" or "EFBE")
-  #ifndef HEATER_BED_PIN
-    #define HEATER_BED_PIN          MOSFET_C_PIN
-  #endif
+  #define HEATER_BED_PIN            MOSFET_C_PIN
   #if EITHER(HAS_MULTI_HOTEND, HEATERS_PARALLEL)
     #define HEATER_1_PIN            MOSFET_D_PIN
   #else
@@ -300,7 +296,7 @@
   #elif EITHER(FET_ORDER_EEF, FET_ORDER_SF)       // Hotend, Hotend, Fan or Spindle, Fan
     #define FAN_PIN                 MOSFET_C_PIN
   #elif FET_ORDER_EEB                             // Hotend, Hotend, Bed
-    #define FAN_PIN                            4  // IO pin. Buffer needed
+    #define FAN_PIN                 MOSFET_B_PIN  //4  // IO pin. Buffer needed
   #else                                           // Non-specific are "EFB" (i.e., "EFBF" or "EFBE")
     #define FAN_PIN                 MOSFET_B_PIN
   #endif
